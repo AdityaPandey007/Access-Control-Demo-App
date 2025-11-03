@@ -30,10 +30,10 @@ class AccessManager(val config: AppConfig) {
         val coolingEnd = parseDateTime(config.user.coolingEndTime)
         val duration = Duration.between(now, coolingEnd)
 
-        val minutes = duration.toMinutes()
+        val minutes = duration.toMinutes() %60
         val seconds = duration.seconds % 60
 
-        return String.format("Cooling ends in %02d:%02d: ", minutes, seconds)
+        return String.format("Cooling ends in %02dm:%02ds", minutes, seconds)
     }
 
     /* Validation for access

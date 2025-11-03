@@ -30,18 +30,17 @@ class ModuleAccessViewModel : ViewModel() {
         startCoolingCountdown()
     }
 
-
      // Loading configuration data from mock JSON as model class
 
     private fun loadConfig() {
 
-        // Mock JSON data - modify times to test different scenarios
+        // Mock JSON data (modify times to test different scenarios)
         val mockJson = """
         {
           "user": {
             "userType": "active",
-            "coolingStartTime": "2025-11-03T15:35:00Z",
-            "coolingEndTime": "2025-11-03T15:40:00Z",
+            "coolingStartTime": "2025-11-03T16:00:00+05:30",
+            "coolingEndTime": "2025-11-03T16:10:00+05:30",
             "accessibleModules": ["payments", "account_info"]
           },
           "modules": [
