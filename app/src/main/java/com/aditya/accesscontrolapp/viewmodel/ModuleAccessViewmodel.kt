@@ -40,8 +40,8 @@ class ModuleAccessViewModel : ViewModel() {
         {
           "user": {
             "userType": "active",
-            "coolingStartTime": "2025-10-30T10:00:00Z",
-            "coolingEndTime": "2025-10-30T10:05:00Z",
+            "coolingStartTime": "2025-11-03T15:35:00Z",
+            "coolingEndTime": "2025-11-03T15:40:00Z",
             "accessibleModules": ["payments", "account_info"]
           },
           "modules": [
