@@ -30,11 +30,11 @@ class ModuleAccessViewModel : ViewModel() {
         startCoolingCountdown()
     }
 
-    /**
-     * Load configuration from mock JSON
-     * In production, this could load from assets or API
-     */
+
+     // Loading configuration data from mock JSON as model class
+
     private fun loadConfig() {
+
         // Mock JSON data - modify times to test different scenarios
         val mockJson = """
         {
@@ -70,9 +70,8 @@ class ModuleAccessViewModel : ViewModel() {
         updateModuleStates()
     }
 
-    /**
-     * Start countdown timer that updates every second
-     */
+    // Starting Countodown as per validation
+
     private fun startCoolingCountdown() {
         viewModelScope.launch {
             while (true) {
@@ -82,9 +81,7 @@ class ModuleAccessViewModel : ViewModel() {
         }
     }
 
-    /**
-     * Update module access states and cooling message
-     */
+    // Updating access for module after cooling period
     private fun updateModuleStates() {
         val config = accessManager.config
         val moduleStates = config.modules.map { module ->
@@ -98,9 +95,7 @@ class ModuleAccessViewModel : ViewModel() {
         )
     }
 
-    /**
-     * Handle module click and return appropriate message
-     */
+    // Handilnh toast messages for module card
     fun onModuleClicked(moduleState: ModuleAccessState): String {
         return if (moduleState.isAccessible) {
             "Navigating to ${moduleState.module.title}"
